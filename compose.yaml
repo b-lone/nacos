@@ -24,6 +24,7 @@ services:
     environment:
       LANG: C.UTF-8
       LC_ALL: C.UTF-8
+      JAVA_TOOL_OPTIONS: -Dnacos.core.sys.basic.processors=2
       NACOS_AUTH_TOKEN_SECRET_FILE: /run/secrets/nacos/auth-token-secret
       NACOS_DATABASE_HOST: host.docker.internal
       NACOS_DATABASE_NAME: nacos
