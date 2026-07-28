@@ -38,10 +38,12 @@ RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
 
 WORKDIR /build
 
+COPY docker/maven-settings.xml /root/.m2/settings.xml
 COPY . .
 
 RUN mvn \
         --batch-mode \
+        --settings /root/.m2/settings.xml \
         '-Prelease-nacos,!dev' \
         -Dmaven.test.skip=true \
         clean \
