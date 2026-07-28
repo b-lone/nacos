@@ -41,7 +41,8 @@ WORKDIR /build
 COPY docker/maven-settings.xml /root/.m2/settings.xml
 COPY . .
 
-RUN mvn \
+RUN --mount=type=cache,target=/root/.m2/repository,sharing=locked \
+    mvn \
         --batch-mode \
         --settings /root/.m2/settings.xml \
         '-Prelease-nacos,!dev' \
