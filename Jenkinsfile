@@ -202,7 +202,7 @@ pipeline {
                         --show-error \
                         --connect-timeout 3 \
                         --max-time 10 \
-                        http://127.0.0.1:8848/nacos/v3/console/health/readiness \
+                        http://127.0.0.1:8081/v3/console/health/readiness \
                         > runtime-health.json
 
                     "$PYTHON_BIN" -c "$(

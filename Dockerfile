@@ -94,6 +94,6 @@ WORKDIR /home/nacos
 
 USER nacos
 
-EXPOSE 8848 9848 9849
+EXPOSE 8080 8848 9848 9849
 
 ENTRYPOINT ["/usr/local/bin/nacos-entrypoint"]
