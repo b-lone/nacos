@@ -92,6 +92,7 @@ pipeline {
                     test -w "$NACOS_LOGS_DIR"
 
                     expected_secrets=(
+                        admin-password
                         auth-token-secret
                         database-password
                         server-identity-key
